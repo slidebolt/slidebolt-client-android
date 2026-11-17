@@ -5,6 +5,10 @@ discover `_slidebolt-api._tcp`, use the code-pairing API, store credentials with
 Android Keystore, and render devices, entities, state, and advertised commands
 without plugin-specific branches.
 
+Both shells permit cleartext traffic because an NSD-advertised installation
+may use HTTP on a trusted local network. Remote installations should advertise
+HTTPS; bearer tokens are never placed in URLs or logs.
+
 ## Modules
 
 - `app-phone`, `app-tv`: installable Compose applications.
