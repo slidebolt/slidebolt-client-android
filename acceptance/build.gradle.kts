@@ -26,6 +26,11 @@ tasks.register<JavaExec>("bddTest") {
     dependsOn(tasks.testClasses)
     classpath = sourceSets.test.get().runtimeClasspath
     mainClass.set("io.cucumber.core.cli.Main")
-    args("--plugin", "pretty", "--plugin", "junit:build/test-results/bdd.xml", "src/test/resources/features")
+    args(
+        "--glue", "com.slidebolt.client.acceptance",
+        "--plugin", "pretty",
+        "--plugin", "junit:build/test-results/bdd.xml",
+        "src/test/resources/features",
+    )
 }
 
